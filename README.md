@@ -13,6 +13,41 @@ It is Rails 6 API app with React frontend
 - react-router (v6)
 - Rails ( 6.1.4 )
 
+### React Router Setup
+
+install react-router-dom
+```
+$ yarn add react-router-dom
+```
+
+setup index.js
+```javascript
+import { BrowserRouter } from "react-router-dom";
+
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root')
+);
+```
+add Routes in App.js
+```javascript
+import { Routes, Route } from 'react-router-dom';
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/public" element={<Public />} />
+      <Route path="/protected" element={<Protected />} />
+    </Routes>
+  );
+}
+
+export default App;
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
